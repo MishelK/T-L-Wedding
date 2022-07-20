@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/border_primary"
+    android:padding="4dp">
+
+    <LinearLayout
+        android:id="@+id/llContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="65"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="חידה החידות"
+                android:gravity="center_horizontal"
+                android:textColor="@color/colorOnPrimary"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="תיאור החידה הינו טקסט המתאר את תוכן החידה או אופן ביצוע החידה"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/colorOnPrimary"
+                android:textSize="14sp"
+                android:layout_below="@id/tvTitle" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlImage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="35">
+
+            <ImageView
+                android:id="@+id/ivImage"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="10dp"
+                android:background="@color/white"
+                android:src="@drawable/search" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</RelativeLayout>

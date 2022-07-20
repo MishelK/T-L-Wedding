@@ -6,4 +6,7 @@
     <string name="navigation_greetings">ברכות</string>
     <string name="navigation_main">ראשי</string>
     <string name="navigation_presents">מתנות</string>
+    <string name="fragment_main_riddles_btn">חידות</string>
+    <string name="fragment_main_gifts_btn">מתנות</string>
+    <string name="fragment_main_greetings_btn">ברכות</string>
 </resources>
