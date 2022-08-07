@@ -23,20 +23,12 @@ class MainActivity : AppCompatActivity() {
                         switchToFragment(MainFragment())
                         return true
                     }
-                    R.id.greetings_page -> {
-                        switchToFragment(GreetingsFragment())
-                        return true
-                    }
                     R.id.presents_page -> {
                         switchToFragment(PresentsFragment())
                         return true
                     }
                     R.id.riddles_page -> {
                         switchToFragment(RiddlesFragment())
-                        return true
-                    }
-                    R.id.settings_page -> {
-                        switchToFragment(SettingsFragment())
                         return true
                     }
                 }
@@ -60,10 +52,5 @@ class MainActivity : AppCompatActivity() {
     fun onGoToPresents(view: View) {
         switchToFragment(PresentsFragment())
         bottomNavigation.selectedItemId = R.id.presents_page
-    }
-
-    fun onGoToGreetings(view: View) {
-        switchToFragment(GreetingsFragment())
-        bottomNavigation.selectedItemId = R.id.greetings_page
     }
 }
