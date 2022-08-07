@@ -25,17 +25,13 @@ class RiddlesFragment: Fragment() {
 
     private var riddles: MutableList<Riddle> = ArrayList()
 
-    // The onCreateView method is called when Fragment should create its View object hierarchy,
-    // either dynamically or via XML layout inflation.
     override fun onCreateView(inflater: LayoutInflater, parent: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Defines the xml file for the fragment
         riddles = RiddleRepository.getRiddlesData(requireContext())
         RiddleRepository.saveRiddlesData(riddles, requireContext())
         return inflater.inflate(R.layout.fragment_riddles, parent, false)
     }
-
-    // This event is triggered soon after onCreateView().
-    // Any view setup should occur here.  E.g., view lookups and attaching view listeners.
+    
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         rvContent.layoutManager = LinearLayoutManager(context)
