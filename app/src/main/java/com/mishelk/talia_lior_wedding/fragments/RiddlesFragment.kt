@@ -12,6 +12,7 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.mishelk.talia_lior_wedding.R
 import com.mishelk.talia_lior_wedding.adapters.RiddleAdapter
+import com.mishelk.talia_lior_wedding.data.RiddleRepository
 import com.mishelk.talia_lior_wedding.data_classes.Riddle
 import kotlinx.android.synthetic.main.fragment_riddles.*
 import org.json.JSONObject
@@ -28,8 +29,8 @@ class RiddlesFragment: Fragment() {
     // either dynamically or via XML layout inflation.
     override fun onCreateView(inflater: LayoutInflater, parent: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Defines the xml file for the fragment
-        riddles = getRiddlesData()
-        saveRiddlesData()
+        riddles = RiddleRepository.getRiddlesData(requireContext())
+        RiddleRepository.saveRiddlesData(riddles, requireContext())
         return inflater.inflate(R.layout.fragment_riddles, parent, false)
     }
 
@@ -39,35 +40,5 @@ class RiddlesFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         rvContent.layoutManager = LinearLayoutManager(context)
         rvContent.adapter = RiddleAdapter(context ?: return, riddles)
-    }
-
-    private fun saveRiddlesData() {
-        val gson = Gson()
-        val stringJson = gson.toJson(riddles)
-        val prefs = requireContext().getSharedPreferences("TLPrefs", MODE_PRIVATE)
-        val editor = prefs.edit()
-        editor.putString("riddles_json", stringJson)
-        editor.commit()
-    }
-
-    private fun getRiddlesData(): MutableList<Riddle> {
-        val riddlesFromCache: MutableList<Riddle>? = getRiddlesDataFromSp()
-        return riddlesFromCache ?: getInitialRiddlesData()
-    }
-
-    private fun getRiddlesDataFromSp(): MutableList<Riddle>? {
-        val prefs = requireContext().getSharedPreferences("TLPrefs", MODE_PRIVATE)
-        val stringJson = prefs.getString("riddles_json", null)
-        val gson = Gson()
-        val itemType = object : TypeToken<MutableList<Riddle>>() {}.type
-        return gson.fromJson(stringJson, itemType)
-    }
-
-    private fun getInitialRiddlesData(): MutableList<Riddle> {
-        val gson = Gson()
-        val itemType = object : TypeToken<MutableList<Riddle>>() {}.type
-        val i: InputStream = requireContext().resources.openRawResource(R.raw.initial_riddles_data)
-        val br = BufferedReader(InputStreamReader(i))
-        return gson.fromJson(br, itemType)
     }
 }
