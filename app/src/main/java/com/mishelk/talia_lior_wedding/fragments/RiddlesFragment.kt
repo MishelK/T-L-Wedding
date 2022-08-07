@@ -31,7 +31,7 @@ class RiddlesFragment: Fragment() {
         RiddleRepository.saveRiddlesData(riddles, requireContext())
         return inflater.inflate(R.layout.fragment_riddles, parent, false)
     }
-    
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         rvContent.layoutManager = LinearLayoutManager(context)
