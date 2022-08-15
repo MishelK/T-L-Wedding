@@ -34,6 +34,7 @@ abstract class BaseBottomSheet() : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViews(view)
+        initTexts()
         initListeners()
     }
 
@@ -64,6 +65,8 @@ abstract class BaseBottomSheet() : BottomSheetDialogFragment() {
     protected abstract fun getContentResource(): Int
 
     protected abstract fun initViews(view: View)
+
+    protected abstract fun initTexts()
 
     protected abstract fun initListeners()
 

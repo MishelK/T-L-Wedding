@@ -12,6 +12,7 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.mishelk.talia_lior_wedding.R
 import com.mishelk.talia_lior_wedding.adapters.RiddleAdapter
+import com.mishelk.talia_lior_wedding.bottom_sheets.RiddleBottomSheet
 import com.mishelk.talia_lior_wedding.data.RiddleRepository
 import com.mishelk.talia_lior_wedding.data_classes.Riddle
 import kotlinx.android.synthetic.main.fragment_riddles.*
@@ -35,6 +36,23 @@ class RiddlesFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         rvContent.layoutManager = LinearLayoutManager(context)
-        rvContent.adapter = RiddleAdapter(context ?: return, riddles)
+        rvContent.adapter = RiddleAdapter(context ?: return, riddles, object: RiddleAdapter.OnItemSelectedListener {
+            override fun onItemSelected(position: Int, item: Riddle) {
+                if (item.isSolved) {
+                    // TODO: 15/08/2022 Go to present
+                } else {
+                    showRiddleBottomSheet(item)
+                }
+            }
+        })
+    }
+
+    private fun showRiddleBottomSheet(riddle: Riddle) {
+        val riddleBottomSheet = RiddleBottomSheet(riddle, object: RiddleBottomSheet.OnClickListeners {
+            override fun onSubmitAnswer(answer: String) {
+
+            }
+        })
+        riddleBottomSheet.show(activity?.supportFragmentManager ?: return, riddleBottomSheet.tag)
     }
 }
