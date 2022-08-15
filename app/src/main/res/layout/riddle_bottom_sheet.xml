@@ -29,12 +29,24 @@
         android:layout_marginHorizontal="10dp"
         android:text="תיאור החידה הוא התיאור של החידה אשר מתאר אותה ודואג שתהיה מתוארת בתיאורה המתאר את כל החידות בעולם"/>
 
+    <TextView
+        android:id="@+id/tvError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/red"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:visibility="invisible"
+        android:text="תשובה שגויה"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="20dp" />
+
     <EditText
         android:id="@+id/etAnswer"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@drawable/border_primary_thin"
-        android:layout_marginTop="30dp"
         android:layout_marginHorizontal="40dp"
         android:layout_gravity="center"
         android:gravity="center"

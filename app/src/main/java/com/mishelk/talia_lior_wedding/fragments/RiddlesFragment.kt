@@ -25,6 +25,7 @@ import java.io.InputStreamReader
 class RiddlesFragment: Fragment() {
 
     private var riddles: MutableList<Riddle> = ArrayList()
+    private lateinit var riddleAdapter: RiddleAdapter
 
     override fun onCreateView(inflater: LayoutInflater, parent: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Defines the xml file for the fragment
@@ -36,21 +37,25 @@ class RiddlesFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         rvContent.layoutManager = LinearLayoutManager(context)
-        rvContent.adapter = RiddleAdapter(context ?: return, riddles, object: RiddleAdapter.OnItemSelectedListener {
-            override fun onItemSelected(position: Int, item: Riddle) {
+        riddleAdapter = RiddleAdapter(context ?: return, ArrayList(riddles), object: RiddleAdapter.OnItemSelectedListener {
+            override fun onItemSelected(item: Riddle, position: Int) {
                 if (item.isSolved) {
                     // TODO: 15/08/2022 Go to present
                 } else {
-                    showRiddleBottomSheet(item)
+                    showRiddleBottomSheet(item, position)
                 }
             }
         })
+        rvContent.adapter = riddleAdapter
     }
 
-    private fun showRiddleBottomSheet(riddle: Riddle) {
+    private fun showRiddleBottomSheet(riddle: Riddle, position: Int) {
         val riddleBottomSheet = RiddleBottomSheet(riddle, object: RiddleBottomSheet.OnClickListeners {
-            override fun onSubmitAnswer(answer: String) {
-
+            override fun onRiddleSolved() {
+                riddles[position].isSolved = true
+                riddleAdapter.data = riddles
+                riddleAdapter.notifyDataSetChanged()
+                RiddleRepository.saveRiddlesData(riddles, requireContext())
             }
         })
         riddleBottomSheet.show(activity?.supportFragmentManager ?: return, riddleBottomSheet.tag)

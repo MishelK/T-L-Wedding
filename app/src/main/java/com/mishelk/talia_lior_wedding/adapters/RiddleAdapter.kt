@@ -16,7 +16,7 @@ import java.util.*
 
 class RiddleAdapter(
     context: Context,
-    private var data: List<Riddle>,
+    var data: List<Riddle>,
     private var onItemSelectedListener: OnItemSelectedListener?) : RecyclerView.Adapter<RiddleAdapter.ViewHolder>() {
 
     private val mInflater: LayoutInflater = LayoutInflater.from(context)
@@ -37,7 +37,7 @@ class RiddleAdapter(
             holder.ivImage.setImageResource(R.drawable.search)
 
         holder.rlContent.setOnClickListener {
-            onItemSelectedListener?.onItemSelected(position, data[position])
+            onItemSelectedListener?.onItemSelected(data[position], position)
         }
     }
 
@@ -53,6 +53,6 @@ class RiddleAdapter(
     }
 
     interface OnItemSelectedListener {
-        fun onItemSelected(position: Int, item: Riddle)
+        fun onItemSelected(item: Riddle, position: Int)
     }
 }
