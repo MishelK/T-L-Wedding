@@ -4,6 +4,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.core.view.isInvisible
@@ -20,6 +21,9 @@ class RiddleBottomSheet(
     private lateinit var tvError: TextView
     private lateinit var etAnswer: EditText
     private lateinit var btnSubmitAnswer: CardView
+    private lateinit var btnGoToPresent: CardView
+    private lateinit var ivCheck: ImageView
+    private lateinit var tvSolved: TextView
 
     override fun getContentResource(): Int {
         return R.layout.riddle_bottom_sheet
@@ -31,6 +35,10 @@ class RiddleBottomSheet(
         tvError = view.findViewById(R.id.tvError)
         etAnswer = view.findViewById(R.id.etAnswer)
         btnSubmitAnswer = view.findViewById(R.id.btnSubmitAnswer)
+        btnGoToPresent = view.findViewById(R.id.btnGoToPresent)
+        ivCheck = view.findViewById(R.id.ivCheck)
+        tvSolved = view.findViewById(R.id.tvSolved)
+        initViewsByRiddleStatus()
     }
 
     override fun initTexts() {
@@ -41,6 +49,9 @@ class RiddleBottomSheet(
     override fun initListeners() {
         btnSubmitAnswer.setOnClickListener {
             onAnswerSubmitted(etAnswer.text.toString())
+        }
+        btnGoToPresent.setOnClickListener {
+            onClickListeners?.onGoToPresent()
         }
         etAnswer.addTextChangedListener(object: TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
@@ -56,10 +67,29 @@ class RiddleBottomSheet(
     private fun onAnswerSubmitted(answer: String) {
         val didSolve = validateAnswer(answer)
         if (didSolve) {
+            riddle.isSolved = true
             onClickListeners?.onRiddleSolved()
-            dismiss()
+            initViewsByRiddleStatus()
         } else {
             tvError.isInvisible = false
+        }
+    }
+
+    private fun initViewsByRiddleStatus() {
+        if (riddle.isSolved) {
+            ivCheck.isVisible = true
+            btnGoToPresent.isVisible = true
+            tvSolved.isVisible = true
+            btnSubmitAnswer.isVisible = false
+            etAnswer.isVisible = false
+            tvError.isVisible = false
+        } else {
+            ivCheck.isVisible = false
+            btnGoToPresent.isVisible = false
+            tvSolved.isVisible = false
+            btnSubmitAnswer.isVisible = true
+            etAnswer.isVisible = true
+            tvError.isInvisible = true
         }
     }
 
@@ -77,6 +107,7 @@ class RiddleBottomSheet(
 
     interface OnClickListeners {
         fun onRiddleSolved()
+        fun onGoToPresent()
     }
 
 }

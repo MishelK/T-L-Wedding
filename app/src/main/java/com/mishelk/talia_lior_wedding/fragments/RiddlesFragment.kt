@@ -36,11 +36,7 @@ class RiddlesFragment: Fragment() {
         rvContent.layoutManager = LinearLayoutManager(context)
         riddleAdapter = RiddleAdapter(context ?: return, ArrayList(riddles), object: RiddleAdapter.OnItemSelectedListener {
             override fun onItemSelected(item: Riddle, position: Int) {
-                if (item.isSolved) {
-                    // TODO: 15/08/2022 Go to present
-                } else {
-                    showRiddleBottomSheet(item, position)
-                }
+                showRiddleBottomSheet(item, position)
             }
         })
         rvContent.adapter = riddleAdapter
@@ -51,7 +47,10 @@ class RiddlesFragment: Fragment() {
             override fun onRiddleSolved() {
                 riddleAdapter.data = RiddleRepository.solveRiddle(riddles[position].id, requireContext())
                 riddleAdapter.notifyDataSetChanged()
-                // TODO: Go to present
+            }
+
+            override fun onGoToPresent() {
+                
             }
         })
         riddleBottomSheet.show(activity?.supportFragmentManager ?: return, riddleBottomSheet.tag)

@@ -37,10 +37,10 @@
         android:textColor="@color/red"
         android:textStyle="bold"
         android:textSize="14sp"
-        android:visibility="invisible"
+        android:visibility="gone"
         android:text="תשובה שגויה"
         android:layout_marginHorizontal="40dp"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"/>
 
     <EditText
         android:id="@+id/etAnswer"
@@ -50,7 +50,8 @@
         android:layout_marginHorizontal="40dp"
         android:layout_gravity="center"
         android:gravity="center"
-        android:hint="הזינו תשובה כאן"/>
+        android:hint="הזינו תשובה כאן"
+        android:visibility="gone"/>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/btnSubmitAnswer"
@@ -59,13 +60,57 @@
         android:layout_marginHorizontal="40dp"
         android:layout_marginTop="20dp"
         app:cardBackgroundColor="@color/colorPrimary"
-        app:cardCornerRadius="20dp">
+        app:cardCornerRadius="20dp"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="סיים"
+            android:textColor="@color/colorOnPrimary"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvSolved"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="פתרתם את החידה!"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:textSize="18sp"
+        android:textColor="@color/colorOnPrimary"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/ivCheck"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/ic_check"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btnGoToPresent"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="20dp"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardCornerRadius="20dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="למתנה"
             android:textColor="@color/colorOnPrimary"
             android:textSize="20sp"
             android:textStyle="bold"/>
