@@ -1,20 +1,23 @@
 [
   {
     "id": 1,
+    "presentId": 1,
     "title": "חידה ראשונה",
     "description": "תיאור של החידה הראשונה",
-    "answer": "",
+    "answer": "answer",
     "isSolved": false
   },
   {
     "id": 2,
+    "presentId": 2,
     "title": "חידה שניה",
     "description": "תיאור של החידה השניה",
-    "answer": "",
+    "answer": "answer",
     "isSolved": false
   },
   {
     "id": 3,
+    "presentId": 3,
     "title": "חידה שלישית",
     "description": "תיאור של החידה השלישית",
     "answer": "answer",
@@ -22,23 +25,10 @@
   },
   {
     "id": 4,
+    "presentId": 4,
     "title": "חידה רביעית",
     "description": "תיאור של החידה הרביעית",
-    "answer": "",
-    "isSolved": false
-  },
-  {
-    "id": 5,
-    "title": "חידה חמישית",
-    "description": "תיאור של החידה חמישית",
-    "answer": "",
-    "isSolved": false
-  },
-  {
-    "id": 6,
-    "title": "חידה שישית",
-    "description": "תיאור של החידה שישית",
-    "answer": "",
+    "answer": "answer",
     "isSolved": false
   }
 ]

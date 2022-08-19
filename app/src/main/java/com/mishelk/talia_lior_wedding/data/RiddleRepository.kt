@@ -27,6 +27,17 @@ class RiddleRepository {
             return riddlesFromCache ?: getInitialRiddlesData(context)
         }
 
+        fun solveRiddle(riddleId: Int, context: Context): MutableList<Riddle> {
+            val riddles = getRiddlesData(context)
+            for (riddle in riddles) {
+                if (riddle.id == riddleId) {
+                    riddle.isSolved = true
+                    saveRiddlesData(riddles, context)
+                }
+            }
+            return riddles
+        }
+
         private fun getRiddlesDataFromSp(context: Context): MutableList<Riddle>? {
             val prefs = context.getSharedPreferences("TLPrefs", Context.MODE_PRIVATE)
             val stringJson = prefs.getString("riddles_json", null)
@@ -40,7 +51,9 @@ class RiddleRepository {
             val itemType = object : TypeToken<MutableList<Riddle>>() {}.type
             val i: InputStream = context.resources.openRawResource(R.raw.initial_riddles_data)
             val br = BufferedReader(InputStreamReader(i))
-            return gson.fromJson(br, itemType)
+            val riddles: MutableList<Riddle> = gson.fromJson(br, itemType)
+            saveRiddlesData(riddles, context)
+            return riddles
         }
     }
 }

@@ -8,8 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import com.mishelk.talia_lior_wedding.R
 import com.mishelk.talia_lior_wedding.adapters.RiddleAdapter
 import com.mishelk.talia_lior_wedding.bottom_sheets.RiddleBottomSheet
@@ -30,7 +28,6 @@ class RiddlesFragment: Fragment() {
     override fun onCreateView(inflater: LayoutInflater, parent: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Defines the xml file for the fragment
         riddles = RiddleRepository.getRiddlesData(requireContext())
-        RiddleRepository.saveRiddlesData(riddles, requireContext())
         return inflater.inflate(R.layout.fragment_riddles, parent, false)
     }
 
@@ -52,10 +49,9 @@ class RiddlesFragment: Fragment() {
     private fun showRiddleBottomSheet(riddle: Riddle, position: Int) {
         val riddleBottomSheet = RiddleBottomSheet(riddle, object: RiddleBottomSheet.OnClickListeners {
             override fun onRiddleSolved() {
-                riddles[position].isSolved = true
-                riddleAdapter.data = riddles
+                riddleAdapter.data = RiddleRepository.solveRiddle(riddles[position].id, requireContext())
                 riddleAdapter.notifyDataSetChanged()
-                RiddleRepository.saveRiddlesData(riddles, requireContext())
+                // TODO: Go to present
             }
         })
         riddleBottomSheet.show(activity?.supportFragmentManager ?: return, riddleBottomSheet.tag)

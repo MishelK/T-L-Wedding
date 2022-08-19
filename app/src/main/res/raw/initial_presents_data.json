@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "riddleId": 1,
+    "title": "מתנה ראשונה",
+    "description": "תיאור של המתנה הראשונה",
+    "url": "https://www.google.com/",
+    "imageUrl": "",
+    "isUnlocked": false,
+    "presentType": 1
+  },
+  {
+    "id": 2,
+    "riddleId": 2,
+    "title": "מתנה שניה",
+    "description": "תיאור של המתנה השניה",
+    "url": "https://www.google.com/",
+    "imageUrl": "",
+    "isUnlocked": false,
+    "presentType": 1
+  },
+  {
+    "id": 3,
+    "riddleId": 3,
+    "title": "מתנה שלישית",
+    "description": "תיאור של המתנה השלישית",
+    "url": "https://www.google.com/",
+    "imageUrl": "",
+    "isUnlocked": false,
+    "presentType": 2
+  },
+  {
+    "id": 4,
+    "riddleId": 4,
+    "title": "מתנה רביעית",
+    "description": "תיאור של המתנה הרביעית",
+    "url": "https://www.google.com/",
+    "imageUrl": "",
+    "isUnlocked": false,
+    "presentType": 2
+  }
+]
