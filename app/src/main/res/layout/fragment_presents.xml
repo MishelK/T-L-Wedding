@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".fragments.RiddlesFragment">
+    tools:context=".fragments.PresentsFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvTitle"
@@ -18,7 +18,7 @@
             android:id="@+id/tvTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="המתנות שפתחתם"
+            android:text="מתנות"
             android:textSize="26sp"
             android:layout_gravity="center"
             android:gravity="center"
@@ -38,5 +38,16 @@
         android:layout_marginBottom="2dp"
         android:paddingVertical="10dp"
         android:paddingHorizontal="10dp"/>
+
+    <TextView
+        android:id="@+id/tvNoPresents"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:textColor="@color/colorOnPrimary"
+        android:textSize="22sp"
+        android:visibility="gone"
+        android:text="עוד לא פתחתם מתנות :(\n עליכם לפתור חידה כדי לפתוח מתנה!"/>
 
 </RelativeLayout>

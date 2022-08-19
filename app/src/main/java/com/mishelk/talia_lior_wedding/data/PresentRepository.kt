@@ -5,7 +5,6 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.mishelk.talia_lior_wedding.R
 import com.mishelk.talia_lior_wedding.data_classes.Present
-import com.mishelk.talia_lior_wedding.data_classes.Riddle
 import java.io.BufferedReader
 import java.io.InputStream
 import java.io.InputStreamReader
@@ -23,13 +22,22 @@ class PresentRepository {
             editor.commit()
         }
 
-        fun getPresentsData(context: Context): MutableList<Present> {
+        fun getPresents(context: Context): MutableList<Present> {
             val presentsFromCache: MutableList<Present>? = getPresentsDataFromSp(context)
             return presentsFromCache ?: getInitialPresentsData(context)
         }
 
+        fun getUnlockedPresents(context: Context): MutableList<Present> {
+            val allPresents: MutableList<Present> = ArrayList(getPresents(context))
+            val unlockedPresents: MutableList<Present> = ArrayList()
+            for (present in allPresents)
+                if (present.isUnlocked)
+                    unlockedPresents.add(present)
+            return unlockedPresents
+        }
+
         fun unlockPresent(presentId: Int, context: Context): MutableList<Present> {
-            val presents = getPresentsData(context)
+            val presents = getPresents(context)
             for (present in presents) {
                 if (present.id == presentId) {
                     present.isUnlocked = true

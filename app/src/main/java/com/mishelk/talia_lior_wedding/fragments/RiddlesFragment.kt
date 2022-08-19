@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.mishelk.talia_lior_wedding.R
 import com.mishelk.talia_lior_wedding.adapters.RiddleAdapter
 import com.mishelk.talia_lior_wedding.bottom_sheets.RiddleBottomSheet
+import com.mishelk.talia_lior_wedding.data.PresentRepository
 import com.mishelk.talia_lior_wedding.data.RiddleRepository
 import com.mishelk.talia_lior_wedding.data_classes.Riddle
 import kotlinx.android.synthetic.main.fragment_riddles.*
@@ -45,12 +46,13 @@ class RiddlesFragment: Fragment() {
     private fun showRiddleBottomSheet(riddle: Riddle, position: Int) {
         val riddleBottomSheet = RiddleBottomSheet(riddle, object: RiddleBottomSheet.OnClickListeners {
             override fun onRiddleSolved() {
+                PresentRepository.unlockPresent(riddles[position].presentId, requireContext())
                 riddleAdapter.data = RiddleRepository.solveRiddle(riddles[position].id, requireContext())
                 riddleAdapter.notifyDataSetChanged()
             }
 
             override fun onGoToPresent() {
-                
+
             }
         })
         riddleBottomSheet.show(activity?.supportFragmentManager ?: return, riddleBottomSheet.tag)
