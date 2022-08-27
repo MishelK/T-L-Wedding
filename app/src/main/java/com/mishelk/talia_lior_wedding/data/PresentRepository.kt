@@ -36,6 +36,15 @@ class PresentRepository {
             return unlockedPresents
         }
 
+        fun getPresent(context: Context, presentId: Int): Present? {
+            val presents = getPresents(context)
+            for (present in presents) {
+                if (present.id == presentId)
+                    return present
+            }
+            return null
+        }
+
         fun unlockPresent(presentId: Int, context: Context): MutableList<Present> {
             val presents = getPresents(context)
             for (present in presents) {

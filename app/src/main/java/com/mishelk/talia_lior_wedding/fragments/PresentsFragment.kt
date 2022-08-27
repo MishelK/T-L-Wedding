@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mishelk.talia_lior_wedding.R
 import com.mishelk.talia_lior_wedding.adapters.PresentAdapter
+import com.mishelk.talia_lior_wedding.bottom_sheets.PresentBottomSheet
 import com.mishelk.talia_lior_wedding.data.PresentRepository
 import com.mishelk.talia_lior_wedding.data_classes.Present
 import kotlinx.android.synthetic.main.fragment_presents.*
@@ -34,20 +35,16 @@ class PresentsFragment: Fragment() {
         rvContent.layoutManager = LinearLayoutManager(context)
         presentAdapter = PresentAdapter(context ?: return, ArrayList(presents), object: PresentAdapter.OnItemSelectedListener {
             override fun onItemSelected(item: Present, position: Int) {
-                showPresentBottomSheet(item, position)
+                showPresentBottomSheet(item)
             }
         })
         rvContent.adapter = presentAdapter
     }
 
-    private fun showPresentBottomSheet(present: Present, position: Int) {
-//        val riddleBottomSheet = RiddleBottomSheet(present, object: RiddleBottomSheet.OnClickListeners {
-//            override fun onRiddleSolved() {
-//                riddleAdapter.data = RiddleRepository.solveRiddle(riddles[position].id, requireContext())
-//                riddleAdapter.notifyDataSetChanged()
-//                // TODO: Go to present
-//            }
-//        })
-//        riddleBottomSheet.show(activity?.supportFragmentManager ?: return, riddleBottomSheet.tag)
+    private fun showPresentBottomSheet(present: Present) {
+        val presentBottomSheet = PresentBottomSheet(present, object: PresentBottomSheet.OnClickListeners {
+
+        })
+        presentBottomSheet.show(activity?.supportFragmentManager ?: return, presentBottomSheet.tag)
     }
 }

@@ -7,9 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mishelk.talia_lior_wedding.R
 import com.mishelk.talia_lior_wedding.adapters.RiddleAdapter
+import com.mishelk.talia_lior_wedding.bottom_sheets.PresentBottomSheet
 import com.mishelk.talia_lior_wedding.bottom_sheets.RiddleBottomSheet
 import com.mishelk.talia_lior_wedding.data.PresentRepository
 import com.mishelk.talia_lior_wedding.data.RiddleRepository
@@ -52,7 +54,15 @@ class RiddlesFragment: Fragment() {
             }
 
             override fun onGoToPresent() {
+                val present = PresentRepository.getPresent(requireContext(), riddle.presentId)
+                // Pushing present fragment
+                val manager: FragmentManager = requireActivity().supportFragmentManager
+                manager.beginTransaction().replace(R.id.contentFragment, PresentsFragment()).commit()
+                // Showing present bottom sheet
+                val presentBottomSheet = PresentBottomSheet(present ?: return, object: PresentBottomSheet.OnClickListeners {
 
+                })
+                presentBottomSheet.show(activity?.supportFragmentManager ?: return, presentBottomSheet.tag)
             }
         })
         riddleBottomSheet.show(activity?.supportFragmentManager ?: return, riddleBottomSheet.tag)

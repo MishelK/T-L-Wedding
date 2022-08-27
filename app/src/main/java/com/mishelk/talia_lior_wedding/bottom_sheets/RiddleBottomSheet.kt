@@ -51,6 +51,7 @@ class RiddleBottomSheet(
             onAnswerSubmitted(etAnswer.text.toString())
         }
         btnGoToPresent.setOnClickListener {
+            dismiss()
             onClickListeners?.onGoToPresent()
         }
         etAnswer.addTextChangedListener(object: TextWatcher {
