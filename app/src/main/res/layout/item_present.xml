@@ -39,6 +39,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvTitle"
                 android:layout_marginTop="5dp"
+                android:maxLength="30"
+                android:ellipsize="end"
                 android:gravity="center_horizontal"
                 android:text="טקסט המתאר את תוכן המתנה"
                 android:textColor="@color/colorOnPrimary"

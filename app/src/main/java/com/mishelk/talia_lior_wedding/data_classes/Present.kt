@@ -6,13 +6,14 @@ data class Present(
     var title: String? = "",
     var description: String? = "",
     var url: String? = "",
-    var imageUrl: String? = "",
+    var reservationUrl: String? = "",
     var isUnlocked: Boolean = false,
     var presentType: Int = 1
 ) {
 
     enum class PresentType(val id: Int) {
         VIDEO(1),
-        GIFT(2)
+        VOUCHER(2),
+        GIFT(3)
     }
 }

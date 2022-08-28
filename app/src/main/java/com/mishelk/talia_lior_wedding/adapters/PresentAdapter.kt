@@ -1,7 +1,6 @@
 package com.mishelk.talia_lior_wedding.adapters
 
 import android.content.Context
-import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +10,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.mishelk.talia_lior_wedding.R
 import com.mishelk.talia_lior_wedding.data_classes.Present
-import java.util.*
 
 
 class PresentAdapter(
@@ -30,7 +28,7 @@ class PresentAdapter(
         val present: Present = data[position]
         holder.tvTitle.text = present.title
         holder.tvDescription.text = present.description
-        if (present.presentType == Present.PresentType.GIFT.id)
+        if (present.presentType == Present.PresentType.VOUCHER.id)
             holder.ivImage.setImageResource(R.drawable.gift)
         else if (present.presentType == Present.PresentType.VIDEO.id)
             holder.ivImage.setImageResource(R.drawable.ic_camera)

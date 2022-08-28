@@ -14,7 +14,7 @@
         android:textColor="@color/colorOnPrimary"
         android:textStyle="bold"
         android:textSize="22sp"
-        android:text="כותרת החידה"
+        android:text="כותרת המתנה"
         android:layout_marginHorizontal="10dp"
         android:layout_marginTop="10dp"/>
 
@@ -27,93 +27,103 @@
         android:textSize="16sp"
         android:layout_marginTop="5dp"
         android:layout_marginHorizontal="10dp"
-        android:text="תיאור החידה הוא התיאור של החידה אשר מתאר אותה ודואג שתהיה מתוארת בתיאורה המתאר את כל החידות בעולם"/>
+        android:text="תיאור המתנה הארוך שיתאר מה המתנה בתיאור די ארוך ומוארך באריכותו"/>
 
-    <TextView
-        android:id="@+id/tvError"
+    <LinearLayout
+        android:id="@+id/llRestaurantVoucher"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textColor="@color/red"
-        android:textStyle="bold"
-        android:textSize="14sp"
-        android:visibility="gone"
-        android:text="תשובה שגויה"
-        android:layout_marginHorizontal="40dp"
-        android:layout_marginTop="20dp"/>
-
-    <EditText
-        android:id="@+id/etAnswer"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@drawable/border_primary_thin"
-        android:layout_marginHorizontal="40dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:hint="הזינו תשובה כאן"
-        android:visibility="gone"/>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/btnSubmitAnswer"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginHorizontal="40dp"
-        android:layout_marginTop="20dp"
-        app:cardBackgroundColor="@color/colorPrimary"
-        app:cardCornerRadius="20dp"
+        android:orientation="vertical"
         android:visibility="gone">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="סיים"
-            android:textColor="@color/colorOnPrimary"
-            android:textSize="20sp"
-            android:textStyle="bold"/>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnOpenVoucher"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="40dp"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="20dp"
+            android:visibility="visible">
 
-    </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="לשובר"
+                android:textColor="@color/colorOnPrimary"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
 
-    <TextView
-        android:id="@+id/tvSolved"
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnOpenBookingLink"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="20dp"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="20dp"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="להזמנה"
+                android:textColor="@color/colorOnPrimary"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llGift"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="פתרתם את החידה!"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center_horizontal"
-        android:textSize="18sp"
-        android:textColor="@color/colorOnPrimary"
-        android:textStyle="bold"
-        android:layout_marginTop="20dp"
-        android:visibility="gone"/>
-
-    <ImageView
-        android:id="@+id/ivCheck"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:src="@drawable/ic_check"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:visibility="gone"/>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/btnGoToPresent"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginHorizontal="40dp"
-        android:layout_marginTop="20dp"
-        app:cardBackgroundColor="@color/colorPrimary"
-        app:cardCornerRadius="20dp"
+        android:orientation="vertical"
         android:visibility="gone">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="למתנה"
-            android:textColor="@color/colorOnPrimary"
-            android:textSize="20sp"
-            android:textStyle="bold"/>
+        <ImageView
+            android:id="@+id/ivGift"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginHorizontal="60dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/gift"
+            android:layout_marginTop="20dp"/>
 
-    </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llVideo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnOpenVideo"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="40dp"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="20dp"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="לסרטון"
+                android:textColor="@color/colorOnPrimary"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
 </LinearLayout>
