@@ -1,6 +1,5 @@
 package com.mishelk.talia_lior_wedding.bottom_sheets
 
-import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
 import android.view.View
@@ -55,7 +54,7 @@ class PresentBottomSheet(
             launchUrl(present.url)
         }
         btnOpenBookingLink.setOnClickListener {
-            launchUrl(present.reservationUrl)
+            launchUrl(present.secondaryUrl)
         }
         btnOpenVideo.setOnClickListener {
             launchUrl(present.url)

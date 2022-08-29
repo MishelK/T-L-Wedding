@@ -39,6 +39,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvTitle"
                 android:layout_marginTop="5dp"
+                android:maxLines="2"
+                android:ellipsize="end"
                 android:gravity="center_horizontal"
                 android:text="תיאור החידה הינו טקסט המתאר את תוכן החידה או אופן ביצוע החידה"
                 android:textColor="@color/colorOnPrimary"

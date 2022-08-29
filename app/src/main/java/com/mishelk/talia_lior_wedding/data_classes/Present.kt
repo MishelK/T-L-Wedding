@@ -6,7 +6,7 @@ data class Present(
     var title: String? = "",
     var description: String? = "",
     var url: String? = "",
-    var reservationUrl: String? = "",
+    var secondaryUrl: String? = "",
     var isUnlocked: Boolean = false,
     var presentType: Int = 1
 ) {

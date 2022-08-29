@@ -5,7 +5,7 @@
     "title": "מתנה ראשונה",
     "description": "תיאור של המתנה הראשונה",
     "url": "https://www.google.com/",
-    "reservationUrl": "",
+    "secondaryUrl": "",
     "isUnlocked": false,
     "presentType": 1
   },
@@ -15,7 +15,7 @@
     "title": "סרטון לדוגמא",
     "description": "תיאור של המתנה השניה",
     "url": "https://www.youtube.com/watch?v=XqZsoesa55w",
-    "reservationUrl": "",
+    "secondaryUrl": "",
     "isUnlocked": false,
     "presentType": 1
   },
@@ -25,7 +25,7 @@
     "title": "400 ש\"ח מתנה למימוש בקיסו",
     "description": "זכיתם בשובר מתנה למסעדת קיסו בקרית אונו על סך 400 ש\"ח!\nחסר לכם לא לזמין את הלמון טוויסט",
     "url": "https://www.google.com/",
-    "reservationUrl": "https://tabitisrael.co.il/online-reservations/create-reservation?step=search&orgId=587aa15403f06e220094aae7",
+    "secondaryUrl": "https://tabitisrael.co.il/online-reservations/create-reservation?step=search&orgId=587aa15403f06e220094aae7",
     "isUnlocked": false,
     "presentType": 2
   },
@@ -35,7 +35,7 @@
     "title": "סט מצעים מרשת ורדינון",
     "description": "זכיתם בסט מצעים מבית ורדינון!\nניתן לבחור מתור אופציה אחת שהיא הסט שכבר נקנה, עסקת החילוף תתבצע מול מריאל, סטופ כדור הארץ בלי החלפות. ט.ל.ח",
     "url": "https://www.mivnecenters.co.il/wp-content/uploads/2018/10/%D7%95%D7%A8%D7%93%D7%99%D7%A0%D7%95%D7%9F.png",
-    "reservationUrl": "",
+    "secondaryUrl": "",
     "isUnlocked": false,
     "presentType": 3
   }
