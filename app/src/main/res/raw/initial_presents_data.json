@@ -2,22 +2,22 @@
   {
     "id": 1,
     "riddleId": 1,
-    "title": "מתנה ראשונה",
-    "description": "תיאור של המתנה הראשונה",
-    "url": "https://www.google.com/",
+    "title": "זוג כרטיסים לסרט VIP",
+    "description": "זכיתם בזוג כרטיסים לסרט VIP בסינמה סיטי!",
+    "url": "https://upload.wikimedia.org/wikipedia/he/thumb/8/86/%D7%A1%D7%99%D7%A0%D7%9E%D7%94_%D7%A1%D7%99%D7%98%D7%99.svg/800px-%D7%A1%D7%99%D7%A0%D7%9E%D7%94_%D7%A1%D7%99%D7%98%D7%99.svg.png",
     "secondaryUrl": "",
     "isUnlocked": false,
-    "presentType": 1
+    "presentType": 3
   },
   {
     "id": 2,
     "riddleId": 2,
-    "title": "סרטון לדוגמא",
-    "description": "תיאור של המתנה השניה",
-    "url": "https://www.youtube.com/watch?v=XqZsoesa55w",
+    "title": "סט מצעים מרשת ורדינון",
+    "description": "זכיתם בסט מצעים מבית ורדינון!\nניתן לבחור מתור אופציה אחת שהיא הסט שכבר נקנה, עסקת החילוף תתבצע מול מריאל, סטופ כדור הארץ בלי החלפות. ט.ל.ח",
+    "url": "https://www.mivnecenters.co.il/wp-content/uploads/2018/10/%D7%95%D7%A8%D7%93%D7%99%D7%A0%D7%95%D7%9F.png",
     "secondaryUrl": "",
     "isUnlocked": false,
-    "presentType": 1
+    "presentType": 3
   },
   {
     "id": 3,
@@ -32,11 +32,71 @@
   {
     "id": 4,
     "riddleId": 4,
-    "title": "סט מצעים מרשת ורדינון",
-    "description": "זכיתם בסט מצעים מבית ורדינון!\nניתן לבחור מתור אופציה אחת שהיא הסט שכבר נקנה, עסקת החילוף תתבצע מול מריאל, סטופ כדור הארץ בלי החלפות. ט.ל.ח",
-    "url": "https://www.mivnecenters.co.il/wp-content/uploads/2018/10/%D7%95%D7%A8%D7%93%D7%99%D7%A0%D7%95%D7%9F.png",
+    "title": "סרטון ברכה מאילנה ומיקי",
+    "description": "",
+    "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     "secondaryUrl": "",
     "isUnlocked": false,
-    "presentType": 3
+    "presentType": 1
+  },
+  {
+    "id": 5,
+    "riddleId": 5,
+    "title": "סרטון ברכה משרי וראובן",
+    "description": "",
+    "url": "",
+    "secondaryUrl": "",
+    "isUnlocked": false,
+    "presentType": 1
+  },
+  {
+    "id": 6,
+    "riddleId": 6,
+    "title": "סרטון ברכה ממור וקארין",
+    "description": "",
+    "url": "",
+    "secondaryUrl": "",
+    "isUnlocked": false,
+    "presentType": 1
+  },
+  {
+    "id": 7,
+    "riddleId": 7,
+    "title": "סרטון ברכה משרון, רובי, ליאם ודניאל",
+    "description": "",
+    "url": "",
+    "secondaryUrl": "",
+    "isUnlocked": false,
+    "presentType": 1
+  },
+  {
+    "id": 8,
+    "riddleId": 8,
+    "title": "סרטון ברכה מחלי, מור, אגם וריף",
+    "description": "",
+    "url": "",
+    "secondaryUrl": "",
+    "isUnlocked": false,
+    "presentType": 1
+  },
+  {
+    "id": 9,
+    "riddleId": 9,
+    "title": "סרטון ברכה מטל והמשפחה",
+    "description": "",
+    "url": "",
+    "secondaryUrl": "7",
+    "isUnlocked": false,
+    "presentType": 1
+  },
+  {
+    "id": 10,
+    "riddleId": 10,
+    "title": "סרטון ברכה ממרי ומיש",
+    "description": "",
+    "url": "",
+    "secondaryUrl": "",
+    "isUnlocked": false,
+    "presentType": 1
   }
 ]

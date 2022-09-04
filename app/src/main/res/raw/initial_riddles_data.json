@@ -2,33 +2,81 @@
   {
     "id": 1,
     "presentId": 1,
-    "title": "חידה ראשונה",
-    "description": "תיאור של החידה הראשונה",
-    "answers": ["answer"],
+    "title": "חידת האימוג'ים! מי אני?",
+    "description": "תו ראשון: קוקו!, אני הכי דומה לאדם!\nתו שני: הצבעים מעיפים אותי לשמיים\nתו שלישי: כשכולם שמחים אני למעלה אבל ביום עצוב, אני יורד לחצי\nתו רביעי: אני קרה, אמריקאית ותמיד באה טוב",
+    "answers": ["\uD83D\uDE48\uD83C\uDF08\uD83C\uDDEE\uD83C\uDDF1\uD83C\uDF66"],
     "isSolved": false
   },
   {
     "id": 2,
     "presentId": 2,
-    "title": "חידה שניה",
-    "description": "תיאור של החידה השניה",
-    "answers": ["answer"],
+    "title": "משחק המילים",
+    "description": "אם אחי דקר 20 אנשים וארגז ברנדה עולה 46 ש\"ח, בת כמה דליה רביקוביץ'?",
+    "answers": ["7"],
     "isSolved": false
   },
   {
     "id": 3,
     "presentId": 3,
-    "title": "חידה שלישית",
-    "description": "תיאור של החידה השלישית",
-    "answers": ["answer"],
+    "title": "אורח בהפתעה",
+    "description": "טליה וליאור לא הזמינו אותי לחתונה, וקצת כעסו שהופעתי בבום, מי אני?",
+    "answers": ["פנס","פנס בעין","הפנס בעין"],
     "isSolved": false
   },
   {
     "id": 4,
     "presentId": 4,
-    "title": "חידה רביעית",
-    "description": "תיאור של החידה הרביעית",
-    "answers": ["answer"],
+    "title": "מי אני?",
+    "description": "יש לי שם של מלך, ולאחותי יש שם טעים, מי אני?",
+    "answers": ["דוד"],
+    "isSolved": false
+  },
+  {
+    "id": 5,
+    "presentId": 5,
+    "title": "הלוואי עלי",
+    "description": "המשכנתא כבדה ואת זה כולם יודעים, אבל איתי בקנה זה חיים אחרים.",
+    "answers": ["מחיר למשתכן","המחיר למשתכן"],
+    "isSolved": false
+  },
+  {
+    "id": 6,
+    "presentId": 6,
+    "title": "המסע",
+    "description": "ראש הממשלה במשך 19 יום 126, + 48 חודשים = כתובת",
+    "answers": ["התדהר 2"],
+    "isSolved": false
+  },
+  {
+    "id": 7,
+    "presentId": 7,
+    "title": "שם קוד",
+    "description": "ג'יוג'יטסו, ג'לי, יוגה, ים",
+    "answers": ["מזרון"],
+    "isSolved": false
+  },
+  {
+    "id": 8,
+    "presentId": 8,
+    "title": "השלישייה",
+    "description": "שלושה בנדיטים שהתחברו ממש מהרגע הראשון, ואותם תצטרכו לנחש מהקטן לגדול",
+    "answers": ["ריף דניאל ליאם","ריף דניאל וליאם"],
+    "isSolved": false
+  },
+  {
+    "id": 9,
+    "presentId": 9,
+    "title": "במה התחדשת?",
+    "description": "תתחדשי! תמונה של טליה בן ושחר",
+    "answers": ["טליה בן שחר"],
+    "isSolved": false
+  },
+  {
+    "id": 10,
+    "presentId": 10,
+    "title": "גימטריה",
+    "description": "30, 7, 40\n2, 6, 9\n5, 60, 10, 9, 6\n5, 40, 10, 70, 50",
+    "answers": ["מזל טוב וטיסה נעימה"],
     "isSolved": false
   }
 ]
