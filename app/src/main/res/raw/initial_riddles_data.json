@@ -4,7 +4,7 @@
     "presentId": 1,
     "title": "חידה ראשונה",
     "description": "תיאור של החידה הראשונה",
-    "answer": "answer",
+    "answers": ["answer"],
     "isSolved": false
   },
   {
@@ -12,7 +12,7 @@
     "presentId": 2,
     "title": "חידה שניה",
     "description": "תיאור של החידה השניה",
-    "answer": "answer",
+    "answers": ["answer"],
     "isSolved": false
   },
   {
@@ -20,7 +20,7 @@
     "presentId": 3,
     "title": "חידה שלישית",
     "description": "תיאור של החידה השלישית",
-    "answer": "answer",
+    "answers": ["answer"],
     "isSolved": false
   },
   {
@@ -28,7 +28,7 @@
     "presentId": 4,
     "title": "חידה רביעית",
     "description": "תיאור של החידה הרביעית",
-    "answer": "answer",
+    "answers": ["answer"],
     "isSolved": false
   }
 ]

@@ -97,7 +97,7 @@ class RiddleBottomSheet(
     }
 
     private fun validateAnswer(answer: String): Boolean {
-        return riddle.answer == answer
+        return riddle.answers.contains(answer)
     }
 
     override fun disabledNativeBackPress(): Boolean {
