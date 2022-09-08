@@ -13,15 +13,6 @@ class RiddleRepository {
 
     companion object {
 
-        fun saveRiddlesData(riddles: MutableList<Riddle>, context: Context) {
-            val gson = Gson()
-            val stringJson = gson.toJson(riddles)
-            val prefs = context.getSharedPreferences("TLPrefs", Context.MODE_PRIVATE)
-            val editor = prefs.edit()
-            editor.putString("riddles_json", stringJson)
-            editor.commit()
-        }
-
         fun getRiddlesData(context: Context): MutableList<Riddle> {
             val riddlesFromCache: MutableList<Riddle>? = getRiddlesDataFromSp(context)
             return riddlesFromCache ?: getInitialRiddlesData(context)
@@ -36,6 +27,27 @@ class RiddleRepository {
                 }
             }
             return riddles
+        }
+
+        fun getRiddleCount(context: Context): Int {
+            return getRiddlesData(context).size
+        }
+
+        fun getSolvedRiddleCount(context: Context): Int {
+            val riddles = getRiddlesData(context)
+            var count = 0
+            for (riddle in riddles)
+               if (riddle.isSolved) count++
+            return count
+        }
+
+        private fun saveRiddlesData(riddles: MutableList<Riddle>, context: Context) {
+            val gson = Gson()
+            val stringJson = gson.toJson(riddles)
+            val prefs = context.getSharedPreferences("TLPrefs", Context.MODE_PRIVATE)
+            val editor = prefs.edit()
+            editor.putString("riddles_json", stringJson)
+            editor.commit()
         }
 
         private fun getRiddlesDataFromSp(context: Context): MutableList<Riddle>? {

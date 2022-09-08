@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.core.view.isGone
 import androidx.core.view.isVisible
 import com.bumptech.glide.Glide
 import com.mishelk.talia_lior_wedding.R
@@ -41,6 +42,7 @@ class PresentBottomSheet(
         ivGift = view.findViewById(R.id.ivGift)
         tvTitle = view.findViewById(R.id.tvTitle)
         tvDescription = view.findViewById(R.id.tvDescription)
+        tvDescription.isGone = present.description?.isEmpty() ?: true
         initViewsByPresentType()
     }
 

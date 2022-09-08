@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
+import androidx.core.view.isGone
 import androidx.recyclerview.widget.RecyclerView
 import com.mishelk.talia_lior_wedding.R
 import com.mishelk.talia_lior_wedding.data_classes.Present
@@ -28,11 +29,11 @@ class PresentAdapter(
         val present: Present = data[position]
         holder.tvTitle.text = present.title
         holder.tvDescription.text = present.description
+        holder.tvDescription.isGone = present.description?.isEmpty() == true
         if (present.presentType == Present.PresentType.VOUCHER.id)
             holder.ivImage.setImageResource(R.drawable.gift)
         else if (present.presentType == Present.PresentType.VIDEO.id)
             holder.ivImage.setImageResource(R.drawable.ic_camera)
-
         holder.rlContent.setOnClickListener {
             onItemSelectedListener?.onItemSelected(data[position], position)
         }

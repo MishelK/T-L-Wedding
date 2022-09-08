@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">@color/mariColor</color>
+    <color name="colorPrimary">#40FFF9</color>
     <color name="colorPrimaryVariant">@color/black</color>
     <color name="colorOnPrimary">@color/black</color>
     <color name="colorSecondary">@color/purple_200</color>

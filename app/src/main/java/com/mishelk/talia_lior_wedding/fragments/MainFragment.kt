@@ -4,8 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.mishelk.talia_lior_wedding.R
+import com.mishelk.talia_lior_wedding.adapters.PresentAdapter
+import com.mishelk.talia_lior_wedding.data.RiddleRepository
+import com.mishelk.talia_lior_wedding.data_classes.Present
+import kotlinx.android.synthetic.main.fragment_main.*
+import kotlinx.android.synthetic.main.fragment_presents.*
 
 
 class MainFragment: Fragment() {
@@ -17,9 +24,16 @@ class MainFragment: Fragment() {
         return inflater.inflate(R.layout.fragment_main, parent, false)
     }
 
-    // This event is triggered soon after onCreateView().
-    // Any view setup should occur here.  E.g., view lookups and attaching view listeners.
-//    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
-//        // Setup any handles to view objects here
-//    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initProgressBar()
+    }
+
+    private fun initProgressBar() {
+        val riddleCount = RiddleRepository.getRiddleCount(requireContext())
+        val solvedRiddleCount = RiddleRepository.getSolvedRiddleCount(requireContext())
+        circularProgressBar.progressMax = riddleCount.toFloat()
+        circularProgressBar.progress = solvedRiddleCount.toFloat()
+        tvProgress.text = "$solvedRiddleCount/$riddleCount"
+    }
 }
