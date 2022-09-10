@@ -13,7 +13,7 @@
     "id": 2,
     "riddleId": 2,
     "title": "סט מצעים מרשת ורדינון",
-    "description": "זכיתם בסט מצעים מבית ורדינון!\nניתן לבחור מתור אופציה אחת שהיא הסט שכבר נקנה, עסקת החילוף תתבצע מול מריאל, סטופ כדור הארץ בלי החלפות. ט.ל.ח",
+    "description": "זכיתם בסט מצעים מבית ורדינון!\nניתן לבחור מתוך אופציה אחת שהיא הסט שכבר נקנה, עסקת החילוף תתבצע מול מריאל, סטופ כדור הארץ בלי החלפות. ט.ל.ח",
     "url": "https://www.mivnecenters.co.il/wp-content/uploads/2018/10/%D7%95%D7%A8%D7%93%D7%99%D7%A0%D7%95%D7%9F.png",
     "secondaryUrl": "",
     "isUnlocked": false,
@@ -82,10 +82,10 @@
   {
     "id": 9,
     "riddleId": 9,
-    "title": "סרטון ברכה מטל והמשפחה",
+    "title": "סרטון ברכה מטל ג'ומי אמיליה ומורגן",
     "description": "",
     "url": "https://www.youtube.com/watch?v=5UpiMp7Bv8Y&feature=youtu.be",
-    "secondaryUrl": "7",
+    "secondaryUrl": "",
     "isUnlocked": false,
     "presentType": 1
   },
@@ -94,7 +94,7 @@
     "riddleId": 10,
     "title": "סרטון ברכה ממרי ומיש",
     "description": "",
-    "url": "",
+    "url": "https://youtu.be/fjJeL45NIQ0",
     "secondaryUrl": "",
     "isUnlocked": false,
     "presentType": 1

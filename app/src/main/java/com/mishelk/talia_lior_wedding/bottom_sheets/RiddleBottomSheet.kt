@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
+import com.bumptech.glide.Glide
 import com.mishelk.talia_lior_wedding.R
 import com.mishelk.talia_lior_wedding.data_classes.Riddle
 
@@ -26,6 +27,7 @@ class RiddleBottomSheet(
     private lateinit var btnGoToPresent: CardView
     private lateinit var ivCheck: ImageView
     private lateinit var tvSolved: TextView
+    private lateinit var ivImage: ImageView
 
     override fun getContentResource(): Int {
         return R.layout.riddle_bottom_sheet
@@ -40,6 +42,10 @@ class RiddleBottomSheet(
         btnGoToPresent = view.findViewById(R.id.btnGoToPresent)
         ivCheck = view.findViewById(R.id.ivCheck)
         tvSolved = view.findViewById(R.id.tvSolved)
+        ivImage = view.findViewById(R.id.ivImage)
+        if (riddle.imageUrl?.isNotEmpty() == true) {
+            ivImage.isVisible = true
+        }
         initViewsByRiddleStatus()
     }
 

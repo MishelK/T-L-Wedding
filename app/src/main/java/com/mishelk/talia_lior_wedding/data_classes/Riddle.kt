@@ -7,6 +7,7 @@ data class Riddle(
     var presentId: Int = 0,
     var title: String? = "",
     var description: String? = "",
+    var imageUrl: String? = "",
     var answers: Array<String> = arrayOf(),
     var isSolved: Boolean = false
 ) {
